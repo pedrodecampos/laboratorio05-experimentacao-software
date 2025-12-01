@@ -1,0 +1,12 @@
+{
+  "name": "shared-models",
+  "version": "1.0.0",
+  "description": "Código compartilhado entre APIs REST e GraphQL",
+  "main": "database.js",
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  }
+}
+
+
+
