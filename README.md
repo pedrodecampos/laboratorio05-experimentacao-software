@@ -14,11 +14,14 @@ lab05/
 │   ├── graphql/                # Implementação da API GraphQL
 │   └── shared/                 # Código compartilhado (database, models)
 ├── scripts/
-│   ├── setup_database.py      # Script para criar dataset sintético
-│   ├── benchmark.py           # Script principal de medição
-│   └── analyze_results.py     # Script para análise estatística
-├── results/                    # Resultados das medições (CSV/JSON)
-├── dashboard/                  # Código para visualização (Sprint 2)
+│   ├── setup_database.py           # Script para criar dataset sintético
+│   ├── benchmark.py                # Script principal de medição
+│   ├── analyze_results.py          # Script para análise básica
+│   ├── statistical_analysis.py    # Análise estatística completa (Sprint 2)
+│   └── generate_report.py          # Gera relatório final (Sprint 2)
+├── dashboard/
+│   └── create_dashboard.py         # Gera visualizações (Sprint 2)
+├── results/                        # Resultados das medições (CSV/JSON/PNG)
 └── requirements.txt            # Dependências Python
 ```
 
@@ -27,10 +30,19 @@ lab05/
 - **RQ1**: Respostas às consultas GraphQL são mais rápidas que respostas às consultas REST?
 - **RQ2**: Respostas às consultas GraphQL têm tamanho menor que respostas às consultas REST?
 
-## Sprint 1 - Objetivos
+## Sprints
+
+### Sprint 1 - Objetivos
 
 - [x] Desenho do experimento
 - [x] Preparação do experimento (APIs e scripts de medição)
+
+### Sprint 2 - Objetivos
+
+- [x] Execução do experimento
+- [x] Análise estatística completa
+- [x] Dashboard de visualização
+- [x] Relatório final
 
 ## Requisitos
 
@@ -87,11 +99,37 @@ npm start
 python scripts/benchmark.py
 ```
 
-### 4. Analisar resultados
+### 4. Analisar resultados (básico)
 
 ```bash
 python scripts/analyze_results.py
 ```
+
+### 5. Análise estatística completa (Sprint 2)
+
+```bash
+python scripts/statistical_analysis.py
+```
+
+### 6. Gerar dashboard de visualização (Sprint 2)
+
+```bash
+python dashboard/create_dashboard.py
+```
+
+### 7. Gerar relatório final (Sprint 2)
+
+```bash
+python scripts/generate_report.py
+```
+
+Os resultados serão salvos em `results/`:
+- `statistical_results.json` - Resultados estatísticos
+- `boxplot_tempo_resposta.png` - Gráfico de tempo
+- `boxplot_tamanho_resposta.png` - Gráfico de tamanho
+- `comparacao_medias.png` - Comparação de médias
+- `tabela_resumo.csv` - Tabela resumo
+- `relatorio_final.md` - Relatório completo
 
 ## Ambiente Experimental
 
@@ -100,13 +138,9 @@ python scripts/analyze_results.py
   - REST: http://localhost:8000
   - GraphQL: http://localhost:8001
 
-## Documentação Adicional
+## Documentação
 
 - `experimento_desenho.md` - Desenho completo do experimento
-- `ENTREGA.md` - Informações da entrega do Sprint 1
-- `QUICKSTART.md` - Guia rápido de execução
-- `NOTAS_DESENVOLVIMENTO.md` - Notas sobre decisões de implementação
-- `ANTES_DE_ENTREGAR.md` - Checklist antes de entregar
 
 ## Referências
 

@@ -232,3 +232,4 @@ As consultas serão realizadas sobre um **dataset sintético** de:
 
 
 
+
